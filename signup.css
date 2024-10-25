@@ -1,0 +1,223 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1e3a8a 0%, #0f172a 100%);
+    font-family: 'Cinzel', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fef3c7;
+    overflow: hidden;
+}
+
+/* Stars Background */
+.stars {
+    position: fixed;
+    inset: 0;
+    background: url('./locked.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 28rem;
+    position: relative;
+    padding: 1rem;
+}
+
+/* Floating Lanterns */
+.lantern {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: rgba(254, 243, 199, 0.2);
+    border-radius: 50%;
+    filter: blur(4px);
+}
+
+.lantern-1 {
+    top: -2rem;
+    left: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.lantern-2 {
+    top: -3rem;
+    right: 1rem;
+    animation: float 3s ease-in-out 1.5s infinite;
+}
+
+/* Auth Box */
+.auth-box {
+    position: relative;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(1px);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(245, 158, 11, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.clock-icon {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem auto;
+    color: #fcd34d;
+    animation: spin 8s linear infinite;
+}
+
+.subtitle {
+    color: rgba(254, 243, 199, 0.7);
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/* Form Elements */
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 0.5rem;
+    color: #fef3c7;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(245, 158, 11, 0.5);
+    font-weight: bolder;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    border-radius: 0.5rem;
+    color: #fef3c7;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.lock-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.submit-btn:hover {
+    background: rgba(245, 158, 11, 0.3);
+    border-color: rgba(245, 158, 11, 0.6);
+}
+
+.btn-glow {
+    position: absolute;
+    inset: 0;
+    background: rgba(245, 158, 11, 0.2);
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover .btn-glow {
+    opacity: 1;
+}
+
+/* Toggle Button */
+.toggle-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: rgba(254, 243, 199, 0.7);
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.toggle-btn:hover {
+    color: rgba(254, 243, 199, 0.9);
+}
+
+/* Decorative Icons */
+.moon-icon, .key-icon {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    color: rgba(231, 209, 120, 0.7);
+}
+
+.moon-icon {
+    left: -1rem;
+    bottom: -1rem;
+}
+
+.key-icon {
+    right: -1rem;
+    top: -1rem;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

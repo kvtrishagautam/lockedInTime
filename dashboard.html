@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked in Time - Time Wanderer's Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="game-container">
+        <!-- Stars effect -->
+        <div class="stars-container">
+            <div class="stars"></div>
+        </div>
+
+        <!-- Top Navigation Bar -->
+        <nav class="top-bar">
+            <div class="player-info">
+                
+                <div class="profile-section">
+                    
+                    <div class="avatar">
+                      
+                        <i data-lucide="user"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                          </svg>
+                          </i>
+                    </div>
+                   
+                    <div class="paste-button">
+                        <button class="button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hamicon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+                          </svg>
+                          
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        </button>
+                        <div class="dropdown-content">
+                          <a id="top" href="#">Profile</a>
+                          <a id="middle" href="#">Edit</a>
+                          <a id="bottom" href="#">logout</a>
+                        </div>
+                      </div>
+
+
+                    <span class="player-name">Time Wanderer</span>
+                    <span class="player-level">Level 7</span>
+                </div>
+            </div>
+            
+            <div class="resource-bar">
+                <div class="resource time-crystals">
+                    <i data-lucide="clock"></i>
+                    <span>1,234</span>
+                </div>
+                <div class="resource cosmic-dust">
+                    <i data-lucide="sparkles"></i>
+                    <span>567</span>
+                </div>
+                <div class="resource mystic-coins">
+                    <i data-lucide="coins"></i>
+                    <span>890</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <h1 class="realm-title">Temporal Realms</h1>
+            
+            <!-- Doorways Grid -->
+            <div class="doorways-grid">
+                <!-- Ancient Portal -->
+                <div class="portal-card">
+                    <div class="portal-content">
+                        <i data-lucide="landmark" class="portal-icon"></i>
+                        <h3>Room 404</h3>
+                        <p>Shuffle through the peices find your way out.</p>
+                        <div class="portal-footer">
+                            <span class="portal-level">Level 1</span>
+                            <button class="enter-btn">
+                                <i data-lucide="door-open"></i>
+                                Enter<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                  </svg>
+                                  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medieval Portal -->
+                <div class="portal-card">
+                    <div class="portal-content">
+                        <i data-lucide="sword" class="portal-icon"></i>
+                        <h3>Room 101</h3>
+                        <p>Type backward to move forward Decode your way out!.</p>
+                        <div class="portal-footer">
+                            <span class="portal-level">Level 3</span>
+                            <button class="enter-btn">
+                                <i data-lucide="door-open"></i>
+                                Enter
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                  </svg>
+                                  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Portal -->
+                <div class="portal-card">
+                    <div class="portal-content">
+                        <i data-lucide="cpu" class="portal-icon"></i>
+                        <h3>Room 502</h3>
+                        <p>Debug your way out! Find and fix the code to escape.</p>
+                        <div class="portal-footer">
+                            <span class="portal-level">Level 5</span>
+                            <button class="enter-btn">
+                                <i data-lucide="door-open"></i>
+                                Enter
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                  </svg>
+                                  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mystic Portal -->
+                <div class="portal-card locked">
+                    <div class="portal-content">
+                        <i data-lucide="wand" class="portal-icon"></i>
+                        <h3>Mystic Realm</h3>
+                        <p>Master magical mysteries</p>
+                        <div class="portal-footer">
+                            <span class="portal-level">Level 10</span>
+                            <button class="enter-btn" disabled>
+                                <i data-lucide="lock"></i>
+                                Locked
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Side Navigation -->
+        <aside class="side-nav">
+            <button class="nav-btn active">
+                <i data-lucide="compass"></i>
+                <span>Realms</span>
+            </button>
+            <button class="nav-btn">
+                <i data-lucide="scroll"></i>
+                <span>Quests</span>
+            </button>
+            <button class="nav-btn">
+                <i data-lucide="book"></i>
+                <span>Codex</span>
+            </button>
+            <button class="nav-btn">
+                <i data-lucide="badge"></i>
+                <span>Achievements</span>
+            </button>
+            <button class="nav-btn">
+                <i data-lucide="briefcase"></i>
+                <span>Inventory</span>
+            </button>
+            <button class="nav-btn">
+                <i data-lucide="settings"></i>
+                <span>Settings</span>
+            </button>
+        </aside>
+    </div>
+    <script src="home-script.js"></script>
+</body>
+</html>
