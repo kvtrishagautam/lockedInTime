@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #9333ea;
+    --secondary-color: #f59e0b;
+    --bg-dark: #1e1b4b;
+    --text-light: #e9d5ff;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(./escaperoom2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    margin-bottom: 2rem;
+}
+
+.time-display, .scrolls-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.challenge-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(8px);
+}
+
+.challenge-title {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.code-container {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.CodeMirror {
+    height: auto;
+    min-height: 200px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-scroll {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-cast {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-escape {
+    background: #ff5722; /* Color for escape button */
+    color: white;
+}
+
+.btn-home {
+    background: #4caf50; /* Green color for the home button */
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.scroll-hint {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    color: var(--secondary-color);
+}
+
+.game-over {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+}
+
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    animation: sparkle 1.5s linear forwards;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.success-message {
+    color: #10b981;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Ensure you have the lang attribute -->
+
+<head>
+    <link rel="stylesheet" href="room1style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Rubik+Wet+Paint&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="room_no">404</div>
+    <div class="animation">Escape!</div>
+    <div class="item-hints">
+        <div class="hint" data-position="4">
+            <span class="hint-radius"></span>
+            <span class="hint-dot">Tip</span>
+            <div class="hint-content do--split-children">
+                <p>"Symbols and numbers drift through the room, forming a hidden language. These codes hold meaning—a
+                    code for machines a message meant for those who know where to look.."</p>
+            </div>
+        </div>
+    </div>
+    <div class="card"></div>
+    <div class="game-container">
+        <div class="torch torch-left"></div>
+        <div class="torch torch-right"></div>
+        <div class="spider">️</div>
+        <div class="skull"></div>
+        <div class="grid-container">
+            <div class="grid-cell" data-position="1"></div>
+            <div class="grid-cell" data-position="2"></div>
+            <div class="grid-cell" data-position="3"></div>
+            <div class="grid-cell" data-position="4"></div>
+            <div class="grid-cell" data-position="5"></div>
+            <div class="grid-cell" data-position="6"></div>
+            <div class="grid-cell" data-position="7"></div>
+            <div class="grid-cell" data-position="8" id="blank">x</div>
+            <div class="grid-cell" data-position="9" id="blank">x</div>
+        </div>
+        <div class="shelf-container">
+            <div class="shelf" data-shelf="1">
+                <div class="block" draggable="true" data-value="111">111</div>
+                <div class="block" draggable="true" data-value="110">110</div>
+                <div class="block" draggable="true" data-value="115">115</div>
+                <div class="block" draggable="true" data-value="101">101</div>
+            </div>
+            <div class="shelf" data-shelf="2">
+                <div class="block" draggable="true" data-value="99">99</div>
+                <div class="block" draggable="true" data-value="111">111</div>
+                <div class="block" draggable="true" data-value="108">108</div>
+            </div>
+        </div>
+        <button id="verifyButton">Verify Pattern</button> <!-- Verify button -->
+        <button id="escapeButton" style="display: none; ">Escape This Room</button>
+        <!-- Escape button, initially hidden -->
+    </div>
+    <script src="room1script.js"></script>
+</body>
+
+</html>

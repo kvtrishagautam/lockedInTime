@@ -1,0 +1,391 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(escroom2_enhanced.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+#blank{
+    color: #666;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.room_no{
+    font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  position: absolute;
+  top: 2%;
+  font-size: 4rem;
+  color: #fff;
+}
+.game-container {
+    position: relative;
+    width: 900px;
+    height: 650px;
+    /* background-image: url('/api/placeholder/800/600'); */
+    /* background-size: cover; */
+   
+}
+
+.grid-container {
+    position: absolute;
+    left: 100px;
+    top: 150px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+}
+
+.grid-cell {
+    background-color: #222;
+    border: 2px solid #444;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shelf-container {
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.shelf {
+    display: flex;
+    gap: 29px;
+    padding: 10px;
+    background-color:transparent;
+    border-radius: 5px;
+    min-height: 80px;
+    width: 400px;
+    align-items: center;
+    border-bottom: #888 solid 2px;
+}
+
+.block {
+    width: 70px;
+    height: 70px;
+    background-color: #666;
+    border: 2px solid #888;
+    border-radius: 5px;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 24px;
+    color: white;
+    user-select: none;
+    transition: transform 0.2s;
+}
+
+.block:hover {
+    transform: scale(1.05);
+}
+
+.block.dragging {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+.torch {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+}
+
+.torch-left {
+    left: 30px;
+    top: 150px;
+}
+
+.torch-right {
+    right: 30px;
+    top: 150px;
+}
+
+.torch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    background: radial-gradient(ellipse at center, #ff8c00 0%, rgba(255,140,0,0) 70%);
+    animation: flicker 1s infinite alternate;
+}
+
+.droppable-hover {
+    background-color: #444 !important;
+    border-color: #666 !important;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.skull {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.7;
+}
+
+.spider {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    animation: swing 2s infinite ease-in-out;
+}
+
+@keyframes swing {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+/* tooltip styling */
+/* From Uiverse.io by vnuny */ 
+.item-hints {
+    --purple: #720c8f;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 170px;
+  }
+  .item-hints .hint {
+    margin: 150px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .item-hints .hint-dot {
+    z-index: 3;
+    border: 1px solid aliceblue;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: translate(-0%, -0%) scale(0.95);
+    transform: translate(-0%, -0%) scale(0.95);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(247, 245, 245);
+  }
+  .item-hints .hint-radius {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  .item-hints .hint[data-position="1"] .hint-content {
+    top: 85px;
+    left: 50%;
+    margin-left: 56px;
+  }
+  .item-hints .hint-content {
+    width: 300px;
+    position: absolute;
+    z-index: 5;
+    padding: 35px 0;
+    opacity: 0;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    color: #fff;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .item-hints .hint:hover .hint-content {
+    position: absolute;
+    z-index: 5;
+    padding: 35px 0;
+    opacity: 1;
+    -webkit-transition: opacity 0.7s ease, visibility 0.7s ease;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    color: #fff;
+    visibility: visible;
+    pointer-events: none;
+  }
+  .item-hints .hint-content::before {
+    width: 0px;
+    bottom: 29px;
+    left: 0;
+    content: "";
+    background-color: #fff;
+    height: 1px;
+    position: absolute;
+    transition: width 0.4s;
+  }
+  .item-hints .hint:hover .hint-content::before {
+    width: 180px;
+    transition: width 0.4s;
+  }
+  .item-hints .hint-content::after {
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    bottom: 29px;
+    left: 0;
+    width: 80px;
+    content: "";
+    background-color: #fff;
+    height: 1px;
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .item-hints .hint:hover .hint-content::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  .item-hints .hint[data-position="4"] .hint-content {
+    bottom: 85px;
+    left: 50%;
+    margin-left: 56px;
+  }
+  .item-hints{
+    position: absolute;
+    right: 74%;
+    bottom: 49%;
+  }
+
+
+
+
+  /* styling for hint card 2 */
+/* From Uiverse.io by ilkhoeri */ 
+/* From Uiverse.io by mahiatlinux */ 
+/* From Uiverse.io by myshy13 */ 
+.card {
+    font-family: monospace;
+    scale: 1.2;
+    height: 9em;
+    width: 35em;
+    border-radius: 0.8em;
+    background: #222;
+    overflow: hidden;
+    color: #ccc;
+  
+   
+    &:before {
+      content: "escape@admin";
+      text-align: center;
+      padding: 0.2em;
+      display: block;
+      background-color: #4e4e4e;
+    }
+    &:after {
+      content: "User@hint ~ $: Perhaps there's a place in your browser where developers often check for hidden messages, errors, or clues. Somewhere you’ve likely never thought to look... a tool they use, that holds answers right at the heart of the page’s inner workings. Find that place, and the way out will reveal itself.";
+      margin: 0.2em;
+    }
+    
+  }
+  .card{
+    position: absolute;
+    top: 55%;
+    left: 52%;
+  }
+
+
+
+
+
+
+
+
+
+  /* From Uiverse.io by JkHuger */ 
+@keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  /* When you change the amount of characters in the h1, you have to change 
+  the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
+  if there is 20 put 20 */
+  .animation {
+    font: bold 200% Consolas, Monaco, monospace;
+    border-right: 0.1em solid whitesmoke;
+    width: 7.2ch;
+    margin: 2em;
+    left: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 80%;
+    color: whitesmoke;
+    -webkit-animation: typing 5s steps(7, end),
+                      blink-caret 0.5s step-end infinite alternate;
+}
+#verifyButton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 5;
+}
+#escapeButton {
+    display: none; 
+    position: absolute;
+    bottom: 20px; /* Adjust position as needed */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    padding: 15px 30px; /* Padding for the button */
+    font-size: 1.5rem; /* Font size */
+    font-weight: bold; /* Font weight */
+    color: #fff; /* Text color */
+    background-color: #2d5838; /* Green background */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+    z-index: 100; /* Make sure it appears above other elements */
+}
+
+#escapeButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}

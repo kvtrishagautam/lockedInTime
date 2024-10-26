@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked in Time - Debug Escape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="./room2.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="time-display">
+                ⏱️ <span id="time">10:00</span>
+            </div>
+            <div class="scrolls-display">
+                📜 <span id="scrolls">3</span> scrolls remain
+            </div>
+        </div>
+
+        <div id="game-content">
+            <div class="challenge-container">
+                <div class="challenge-title">
+                    🪄 Mystical Challenges
+                </div>
+                <div id="challenge-description"></div>
+                <div class="code-container">
+                    <textarea id="code-editor"></textarea>
+                </div>
+                <div id="scroll-hint" class="scroll-hint" style="display: none;"></div>
+                <div class="button-container">
+                    <button id="scroll-btn" class="btn btn-scroll">
+                        📜 Consult Ancient Scroll (-30s)
+                    </button>
+                    <button id="cast-btn" class="btn btn-cast">
+                        🪄 Cast Spell
+                    </button>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="./room2.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
